@@ -47,9 +47,9 @@ object AlgebirdBuild extends Build {
     publishTo <<= version { v =>
       Some(
         if (v.trim.endsWith("SNAPSHOT"))
-          Opts.resolver.mavenLocalFile
+          Opts.resolver.sonatypeSnapshots
         else
-          Opts.resolver.mavenLocalFile
+          Opts.resolver.sonatypeStaging
       )
     },
 
